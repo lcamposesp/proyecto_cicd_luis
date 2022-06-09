@@ -8,7 +8,7 @@ application.config['SECRET_KEY'] = SECRET_KEY
 
 @application.route('/')
 def hello_world():  
-        return('<h1>API Sencilla de Flask </h1>')
+        return('<h1>API Sencilla de Flask que hace un crawl de noticias de Costa Rica </h1>')
 @application.route('/deportes',methods=['GET'])
 def noticias_deportes():
     response =scraper_nacion.scraping_nacion_deportes()
