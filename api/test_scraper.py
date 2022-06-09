@@ -5,3 +5,6 @@ def test_scraper_return_deportes():
 def test_scraper_return_pais():
     response = scraper_nacion.scraping_nacion_pais()
     assert "El Pais" in response
+def test_scraper_return_mundo():
+    response = scraper_nacion.scraping_nacion_mundo()
+    assert "El Mundo" in response
