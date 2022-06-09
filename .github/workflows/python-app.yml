@@ -37,4 +37,13 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-        
+  deploy:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "python-flask-nacion" #Must be unique in Heroku
+          heroku_email: "lcamposesp@ucreativa.com"      
