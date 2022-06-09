@@ -15,7 +15,7 @@ def scraping_nacion_deportes():
         list_titles.append(titles['title'] +'Fuente: '+ added_url+ titles['href'])
         key+=1
     return list_titles
-
+    
 def jsonify_titles(list_with_titles):
     print(list_with_titles)
 
