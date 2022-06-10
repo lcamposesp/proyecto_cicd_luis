@@ -39,11 +39,11 @@ jobs:
         pytest
   deploy:
       runs-on: ubuntu-latest
+      needs: build
       steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "proyecto-cicd-luis"
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          healthcheck: "https://proyecto_cicd_luis.herokuapp.com/health"      
+          heroku_email: ${{secrets.HEROKU_EMAIL}}   
