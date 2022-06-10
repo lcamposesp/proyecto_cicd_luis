@@ -1,8 +1,9 @@
-from flask import Flask,jsonify
-from api import scraper_nacion
+from flask import Flask,jsonify,render_template
+from api.scrapers import scraper_nacion
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+
 def create_app():
     app = Flask(__name__)
 
@@ -16,7 +17,7 @@ def create_app():
 
     @app.route('/')
     def hello_world():  
-        return('<h1>API Sencilla de Flask que hace un crawl de noticias de Costa Rica </h1>')
+        return render_template('homepage/homepage.html')
     @app.route('/deportes',methods=['GET'])
     def noticias_deportes():
         response =scraper_nacion.scraping_nacion_deportes()
