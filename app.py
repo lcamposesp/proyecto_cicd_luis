@@ -1,9 +1,17 @@
 from flask import Flask,jsonify
 from api import scraper_nacion
-
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
 app = Flask(__name__)
-SECRET_KEY = '1393459340023492'
+
+# loading env files
+load_dotenv()
+env_path = Path('.')/'.env'
+load_dotenv(dotenv_path=env_path)
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/')
