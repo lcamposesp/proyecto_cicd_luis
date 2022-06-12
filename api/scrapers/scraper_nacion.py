@@ -118,5 +118,3 @@ def scraping_nacion_deportes_for_index():
             content_to_render[val] = "https://nacion.com"+ val2 
     return content_to_render
         
-
-scraping_nacion_deportes_for_index()
