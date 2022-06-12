@@ -1,5 +1,5 @@
 from flask import Flask,jsonify,render_template
-from api.scrapers import scraper_nacion
+
 from dotenv import load_dotenv
 from pathlib import Path
 import os
@@ -16,15 +16,20 @@ def create_app():
     app.config['SECRET_KEY'] = SECRET_KEY
 
     @app.route('/')
-    def hello_world():  
-        return render_template('homepage/homepage.html')
+    def hello_world():
+        from api.scrapers import scraper_nacion
+        content =   scraper_nacion.scraping_nacion_deportes_for_index()
+        return render_template('homepage/homepage.html',content=content)
     @app.route('/deportes',methods=['GET'])
     def noticias_deportes():
+        from api.scrapers import scraper_nacion
         response =scraper_nacion.scraping_nacion_deportes()
         return response
     @app.route('/el-pais', methods=['GET'])
     def noticias_el_pais():
+        from api.scrapers import scraper_nacion
         response = scraper_nacion.scraping_nacion_pais()
         return response 
     return app
 
+create_app()

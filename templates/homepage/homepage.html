@@ -6,8 +6,13 @@
 </head>
  
 <body>
-    <h2></h2>
-    <h4>Flask: Rendering Templates</h4>
+    <h2>Noticias Deportes</h2>
+    <h3>
+        {% for key,val in content.items() %}
+        <li>{{key}}</li>
+        <a href={{val}}>Link a noticia</a>
+        {% endfor %}
+    </h3>
  <!-- this section can be replaced by a child document -->  
 {% block body %}
  
