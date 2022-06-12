@@ -1,4 +1,3 @@
-from http import server
 from flask import Flask,jsonify,render_template
 
 from dotenv import load_dotenv
@@ -6,7 +5,7 @@ from pathlib import Path
 import os
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,template_folder='templates')
 
     # loading env files
     load_dotenv()
@@ -32,6 +31,3 @@ def create_app():
         response = scraper_nacion.scraping_nacion_pais()
         return response
     return app
-
-if __name__ == "__main__":
-    server.run(debug = True)
