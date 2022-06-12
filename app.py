@@ -17,7 +17,9 @@ def create_app():
 
     @app.route('/')
     def hello_world():
-        return('Hola mundo')
+        from api.scrapers import scraper_nacion
+        content =   scraper_nacion.scraping_nacion_deportes_for_index()
+        return render_template('homepage/homepage.html',content=content)
     @app.route('/deportes',methods=['GET'])
     def noticias_deportes():
         from api.scrapers import scraper_nacion
@@ -28,9 +30,5 @@ def create_app():
         from api.scrapers import scraper_nacion
         response = scraper_nacion.scraping_nacion_pais()
         return response
-    @app.route('/deportes/render')
-    def render_noticias_deportes():
-        from api.scrapers import scraper_nacion
-        content =   scraper_nacion.scraping_nacion_deportes_for_index()
-        return render_template('homepage/homepage.html',content=content)
+        
     return app
