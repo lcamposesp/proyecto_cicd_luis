@@ -29,5 +29,5 @@ def create_app():
     def noticias_el_pais():
         from api.scrapers import scraper_nacion
         response = scraper_nacion.scraping_nacion_pais()
-        return response 
+        return response
     return app
