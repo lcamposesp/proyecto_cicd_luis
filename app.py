@@ -1,3 +1,4 @@
+from http import server
 from flask import Flask,jsonify,render_template
 
 from dotenv import load_dotenv
@@ -31,3 +32,6 @@ def create_app():
         response = scraper_nacion.scraping_nacion_pais()
         return response
     return app
+
+if __name__ == "__main__":
+    server.run(debug = True)
