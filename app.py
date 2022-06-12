@@ -31,5 +31,3 @@ def create_app():
         response = scraper_nacion.scraping_nacion_pais()
         return response 
     return app
-
-create_app()
