@@ -247,4 +247,44 @@ def scraping_nacion_tecnologia_for_index():
     # print(set_url)
     content_to_render = dict(zip(set_titles,set_url))
     return content_to_render
-    
+
+def scraping_nacion_economia_for_index():
+    #This is the method that will return the relevant titles and URLs to the front end that gets displayed in home
+    dict_titles = {}
+    dict_url = {}
+    r = requests.get('https://www.nacion.com/economia/')
+    soup = BeautifulSoup(r.content, 'html.parser')
+    s = soup.find('div', class_='results-list-container')
+    content = s.find_all('a',href=True,title=True)
+    #Adding items from the content scraping
+    key=1
+    for item in content:
+        dict_titles[key] = item['title']
+        dict_url[key] = item['href']
+        key += 1
+    # Cleanup of duplicate results
+    # This currently works for the titles being returned correctly but not the actual links, which are WIP   
+    temp = []
+    res_titles = dict()
+    for key,val in sorted(dict_titles.items()):
+        if val not in temp:
+            temp.append(val)
+            res_titles[key] = val
+    temp_url = []
+    res_url = dict()
+    for key,val in sorted(dict_url.items()):
+        if val not in temp_url:
+            temp_url.append(val)
+            res_url[key] = val
+    set_titles = list()
+    set_url = list()
+    for key,val in res_titles.items():
+        set_titles.append(val)
+    for key,val in res_url.items():
+        set_url.append(val)
+    # Uncomment the lines below for debugging more the assigment of titles to urls
+    # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
+    # print(set_titles)
+    # print(set_url)
+    content_to_render = dict(zip(set_titles,set_url))
+    return content_to_render

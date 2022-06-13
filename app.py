@@ -38,7 +38,11 @@ def create_app():
         from api.scrapers import scraper_nacion
         content = scraper_nacion.scraping_nacion_tecnologia_for_index()
         return render_template('homepage/tecnologia.html',content=content)
-        
+    @app.route('/economia')
+    def noticias_economia():
+        from api.scrapers import scraper_nacion
+        content = scraper_nacion.scraping_nacion_economia_for_index()
+        return render_template('homepage/economia.html',content=content)
     return app
 app = create_app()
 if __name__ == '__main__':
