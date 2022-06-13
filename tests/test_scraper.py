@@ -1,5 +1,5 @@
 from pyparsing import empty
-from api.scrapers.scraper_nacion import scraping_nacion_deportes,scraping_nacion_mundo,scraping_nacion_pais,scraping_nacion_tecnologia,scraping_nacion_deportes_for_index
+from api.scrapers.scraper_nacion import *
 def test_scraper_return_nacion_deportes():
     response = scraping_nacion_deportes()
     assert "Deportes" in response
@@ -14,4 +14,10 @@ def test_scraper_return_nacion_tecnologia():
     assert "Tecnologia" in response
 def test_scraper_return_nacion_for_index():
     returned_data = scraping_nacion_deportes_for_index()
+    assert returned_data.values() is not empty
+def test_scraper_return_nacion_for_index():
+    returned_data = scraping_nacion_elpais_for_index()
+    assert returned_data.values() is not empty
+def test_scraper_return_nacion_for_index():
+    returned_data = scraping_nacion_mundo_for_index()
     assert returned_data.values() is not empty

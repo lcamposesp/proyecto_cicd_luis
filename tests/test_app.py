@@ -15,3 +15,4 @@ def test_homepage_up(client):
 def test_deportes(client):
     response = client.get('/deportes')
     assert b"Deportes" in response.data
+
