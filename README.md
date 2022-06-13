@@ -10,3 +10,10 @@ El proyecto trabaja bajo un marco donde las noticias no contienen ningun tipo de
 De momento la pagina no muestra resultados de otros medios mas que La Nacion, asi que cualquier ayuda es bien recibida. 
 
 
+Dev Readme
+
+Para correr el proyecto, se necesita de:
+ - Python 3.8 al menos
+ - Correr dentro de la carpeta root del directorio `pip install -r requirements`
+ - Para correr la aplicacion `flask run`
+
