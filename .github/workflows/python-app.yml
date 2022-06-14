@@ -46,7 +46,6 @@ jobs:
         name: coverage-report
         path: coverage.json
   sonarcloud:
-    name: SonarCloud
     runs-on: ubuntu-latest
     needs: build
     steps:
