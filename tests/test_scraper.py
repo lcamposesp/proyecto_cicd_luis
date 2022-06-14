@@ -12,15 +12,22 @@ def test_scraper_return_nacion_mundo():
 def test_scraper_return_nacion_tecnologia():
     response = scraping_nacion_tecnologia()
     assert "Tecnologia" in response
-def test_scraper_return_nacion_for_index():
+def test_scraper_return_nacion_deportes_for_index():
     returned_data = scraping_nacion_deportes_for_index()
     assert returned_data.values() is not empty
-def test_scraper_return_nacion_for_index():
+def test_scraper_return_nacion_pais_for_index():
     returned_data = scraping_nacion_elpais_for_index()
     assert returned_data.values() is not empty
-def test_scraper_return_nacion_for_index():
+def test_scraper_return_nacion_mundo_for_index():
     returned_data = scraping_nacion_mundo_for_index()
     assert returned_data.values() is not empty
+def test_scraper_return_nacion_tecnologia():
+    returned_data = scraping_nacion_tecnologia_for_index()
+    assert returned_data.values() is not empty
+def test_scraper_return_nacion_economia():
+    returned_data = scraping_nacion_economia_for_index()
+    assert returned_data.values() is not empty
+
 
 # More tests need to be added to validate the extra content that is being added. An example test case could be
 # def test_scraper_return_extra_content_deportes():
