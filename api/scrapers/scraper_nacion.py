@@ -362,5 +362,3 @@ def more_content_deportes():
     # print(set_url)
     content_to_render = dict(zip(set_titles,set_url))
     return set_more_content
-
-more_content_deportes()
