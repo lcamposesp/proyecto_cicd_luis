@@ -30,36 +30,36 @@ def create_app():
     # In order for more content to be passed, different methods had to be created in scraper_nacion.py to get that as a list. The list is whaty we are passing down to these variables
     
     # =================================== Jobs that run every 2 hours to update content ===================================== #
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_content_deportes_titles_url():
         from api.scrapers import scraper_nacion
         content_deportes = scraper_nacion.scraping_nacion_deportes_for_index()
         return content_deportes
 
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_extra_content_deportes():
         from api.scrapers import scraper_nacion
         extra_content_deportes = scraper_nacion.more_content_deportes()
         return extra_content_deportes
     
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_content_elpais_titles_url():
         from api.scrapers import scraper_nacion
         content_elpais = scraper_nacion.scraping_nacion_elpais_for_index()
         return content_elpais
 
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_content_mundo_titles_url():
         from api.scrapers import scraper_nacion
         content_mundo = scraper_nacion.scraping_nacion_mundo_for_index()
         return content_mundo
 
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_content_tecnologia_titles_url():
         from api.scrapers import scraper_nacion
         content_tecnologia = scraper_nacion.scraping_nacion_tecnologia_for_index()
         return content_tecnologia
-    @cron.interval_schedule(hours=2)
+    #@cron.interval_schedule(hours=2)
     def get_content_economia_titles_url():
         from api.scrapers import scraper_nacion
         content_economia = scraper_nacion.scraping_nacion_economia_for_index()
