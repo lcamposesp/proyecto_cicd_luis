@@ -310,6 +310,7 @@ def scraping_nacion_economia_for_index():
 # The methods are in charge of crawling the same sites as the methods above but return a simple list with the extra content missed in the <p> tags. 
 # Only paragraphs are returned and for sure the methods need a little bit of cleaning which is already a story here: https://github.com/lcamposesp/proyecto_cicd_luis/projects/1#card-83141591 
 def more_content_deportes():
+
     # THIS NEEDS A LITTLE BIT OF CLEANING SINCE NOT ALL LINES ARE USED OR EVEN NEED TO BE CALLED. MOSTLY LINES THAT DO NOT FOCUS ON THE EXTRA CONTENT ADDED
     # This method will return a list with the extra content missed from the pages below
     dict_titles = {}
@@ -361,3 +362,5 @@ def more_content_deportes():
     # print(set_url)
     content_to_render = dict(zip(set_titles,set_url))
     return set_more_content
+
+more_content_deportes()

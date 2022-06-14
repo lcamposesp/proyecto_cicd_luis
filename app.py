@@ -38,7 +38,7 @@ def create_app():
         return render_template('homepage/deportes.html',content=content_deportes,extra_content_deportes=extra_content_deportes)
     @app.route('/elpais', methods=['GET'])
     def noticias_el_pais():
-        return render_template('homepage/deportes.html',content=content_elpais)
+        return render_template('homepage/elpais.html',content=content_elpais)
     @app.route('/mundo')
     def noticias_mundo():
         return render_template('homepage/mundo.html',content=content_mundo)
