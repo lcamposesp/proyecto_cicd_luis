@@ -39,12 +39,12 @@ jobs:
         coverage run -m pytest
     - name: Generate coverage report
       run: |
-        coverage json
+        coverage xml
     - name: Archiving artifacts
       uses: actions/upload-artifact@v3
       with:
         name: coverage-report
-        path: coverage.json
+        path: coverage.xml
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
