@@ -24,3 +24,4 @@ gunicorn
 python-dotenv
 coverage
 flask-bootstrap
+flask-wtf

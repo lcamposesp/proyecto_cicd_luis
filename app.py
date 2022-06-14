@@ -1,5 +1,6 @@
 from flask import Flask,jsonify,render_template,url_for
 from flask_bootstrap import Bootstrap
+from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 from pathlib import Path
 import os
@@ -50,5 +51,7 @@ def create_app():
     return app
 
 app = create_app()
+crsf = CSRFProtect()
+crsf.init_app(app)
 if __name__ == '__main__':
     app.run(debug=False)
