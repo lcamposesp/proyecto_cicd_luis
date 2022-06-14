@@ -4,7 +4,9 @@ from operator import add
 import requests
 from bs4 import BeautifulSoup
 
-#Codigo encargado de hacer el scraping de la pagina web
+# API that crawl the different parts of La Nacion website and return a response in a JSON file
+# Unless there are no changes to the application, the code can be considered as deprecated but left for learning purpouses
+# If there is no more learning to be done, then they can be deleted since we have a story open for it here: https://github.com/lcamposesp/proyecto_cicd_luis/projects/1#card-83141591
 def scraping_nacion_deportes():
     added_url = 'https://www.nacion.com/'
     list_titles = []
@@ -85,6 +87,9 @@ def scraping_nacion_tecnologia():
     json_str = json.dumps(dict_titles)
     return json_str
 
+# Method that are actually being used
+# The methods are in charge of scraping the web as well but instead of returning a JSON data structure, it returns a dictionary that can then later be rendered in the template.
+# ONLY titles and URLS are included in the functions below as part of the dictionary returned
 def scraping_nacion_deportes_for_index():
     #This is the method that will return the relevant titles and URLs to the front end that gets displayed in home
     dict_titles = {}
@@ -301,9 +306,12 @@ def scraping_nacion_economia_for_index():
     content_to_render = dict(zip(set_titles,set_url))
     return content_to_render
 
+# Methods that are also being used
+# The methods are in charge of crawling the same sites as the methods above but return a simple list with the extra content missed in the <p> tags. 
+# Only paragraphs are returned and for sure the methods need a little bit of cleaning which is already a story here: https://github.com/lcamposesp/proyecto_cicd_luis/projects/1#card-83141591 
 def more_content_deportes():
     # THIS NEEDS A LITTLE BIT OF CLEANING SINCE NOT ALL LINES ARE USED OR EVEN NEED TO BE CALLED. MOSTLY LINES THAT DO NOT FOCUS ON THE EXTRA CONTENT ADDED
-    #This is the method that will return the relevant titles and URLs to the front end that gets displayed in home
+    # This method will return a list with the extra content missed from the pages below
     dict_titles = {}
     dict_url = {}
     dict_content = dict()
