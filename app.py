@@ -92,9 +92,8 @@ def create_app():
     atexit.register(lambda: cron.shutdown(wait=False))
     return app
 
-
+app = create_app()
+crsf = CSRFProtect()
+crsf.init_app(app)
 if __name__ == '__main__':
-    app = create_app()
-    crsf = CSRFProtect()
-    crsf.init_app(app)
     app.run(debug=False)
