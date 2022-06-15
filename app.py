@@ -4,9 +4,6 @@ from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 from pathlib import Path
 import os
-import atexit
-
-
 
 def create_app():
     # Setup of the application, passing down the location of the templates file that contains the HTML code
@@ -89,7 +86,6 @@ def create_app():
     return app
 
 app = create_app()
-
 if __name__ == '__main__':
     crsf = CSRFProtect()
     crsf.init_app(app)
