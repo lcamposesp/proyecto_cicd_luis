@@ -25,3 +25,4 @@ python-dotenv
 coverage
 flask-bootstrap
 flask-wtf
+assertpy
