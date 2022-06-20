@@ -52,6 +52,26 @@ def create_app():
         from api.scrapers import scraper_nacion
         content_economia = scraper_nacion.scraping_nacion_economia_for_index()
         return content_economia
+    
+    # Methods pertaining El Financiero #
+    # This is what will get the content and pass it to each HTML # 
+    def get_content_economiaef_titles_url():
+        from api.scrapers import scraper_elfinanciero
+        content_economia = scraper_elfinanciero.scraping_elfinanciero_economia_for_index()
+        return content_economia
+    def get_extra_content_economiaef():
+        from api.scrapers import scraper_elfinanciero
+        extra_content = scraper_elfinanciero.more_content_economiaef()
+        return extra_content
+    def get_content_opinionaef_titles_url():
+        from api.scrapers import scraper_elfinanciero
+        content_opinion = scraper_elfinanciero.scraping_elfinanciero_opinion_for_index()
+        return content_opinion
+    def get_extra_content_opinionaef():
+        from api.scrapers import scraper_elfinanciero
+        extra_content = scraper_elfinanciero.more_content_opinionef()
+        return extra_content
+    
     # =================================== Methods that actually do the scraping ====================================== #
 
     @app.route('/')
@@ -83,6 +103,19 @@ def create_app():
     def noticias_economia():
         content_economia = get_content_economia_titles_url()
         return render_template('homepage/economia.html',content=content_economia)
+
+    @app.route('/economia_ef')
+    def noticias_economiaef():
+        content_economia = get_content_economiaef_titles_url()
+        extra_content = get_extra_content_economiaef()
+        return render_template('homepage/economia_ef.html',content=content_economia, extra_content = extra_content)
+
+    @app.route('/opinion_ef')
+    def noticias_opinionef():
+        content_opinion = get_content_opinionaef_titles_url()
+        extra_content = get_extra_content_opinionaef()
+        return render_template('homepage/economia_ef.html',content=content_opinion, extra_content = extra_content)
+
     return app
 
 app = create_app()

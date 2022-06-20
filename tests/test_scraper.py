@@ -1,5 +1,8 @@
 from pyparsing import empty
+from api.scrapers.scraper_elfinanciero import scraping_elfinanciero_economia_for_index, scraping_elfinanciero_opinion_for_index
 from api.scrapers.scraper_nacion import *
+
+
 def test_scraper_return_nacion_deportes():
     response = scraping_nacion_deportes()
     assert "Deportes" in response
@@ -27,7 +30,12 @@ def test_scraper_return_nacion_tecnologia_for_index():
 def test_scraper_return_nacion_economia_for_index():
     returned_data = scraping_nacion_economia_for_index()
     assert returned_data.values() is not empty
-
+def test_scraper_return_economia_ef_for_index():
+    returned_data = scraping_elfinanciero_economia_for_index()
+    assert returned_data.values() is not empty
+def test_scraper_return_opinion_ef_for_index():
+    returned_data = scraping_elfinanciero_opinion_for_index()
+    assert returned_data.values() is not empty
 # More tests need to be added to validate the extra content that is being added. An example test case could be
 # def test_scraper_return_extra_content_deportes():
 #   returned_Data = more_content_deportes()

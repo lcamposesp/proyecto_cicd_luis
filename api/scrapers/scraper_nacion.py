@@ -360,5 +360,4 @@ def more_content_deportes():
     # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
     # print(set_titles)
     # print(set_url)
-    content_to_render = dict(zip(set_titles,set_url))
     return set_more_content
