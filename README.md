@@ -1,5 +1,7 @@
 # RapinoticiasCR
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rapinoticiascr2022os&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rapinoticiascr2022os)
+
 Pagina web que provee a los usuarios con resumenes rapidos ademas del link a las noticias de diversos medios en Costa Rica. Las rapinoticias como se ven en la pagina web, tienen tres partes:
   - Titulo
   - Link a la noticias
