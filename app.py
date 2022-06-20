@@ -59,19 +59,41 @@ def create_app():
         from api.scrapers import scraper_elfinanciero
         content_economia = scraper_elfinanciero.scraping_elfinanciero_economia_for_index()
         return content_economia
+        
     def get_extra_content_economiaef():
         from api.scrapers import scraper_elfinanciero
         extra_content = scraper_elfinanciero.more_content_economiaef()
         return extra_content
+
     def get_content_opinionaef_titles_url():
         from api.scrapers import scraper_elfinanciero
         content_opinion = scraper_elfinanciero.scraping_elfinanciero_opinion_for_index()
         return content_opinion
+
     def get_extra_content_opinionaef():
         from api.scrapers import scraper_elfinanciero
         extra_content = scraper_elfinanciero.more_content_opinionef()
         return extra_content
+
+    def get_content_pymesef_titles_url():
+        from api.scrapers import scraper_elfinanciero
+        content_pymes = scraper_elfinanciero.scraping_elfinanciero_pymes_for_index()
+        return content_pymes
+
+    def get_extra_content_pymesef():
+        from api.scrapers import scraper_elfinanciero
+        extra_content = scraper_elfinanciero.more_content_pymesef()
+        return extra_content
     
+    def get_content_tecnologiaef_titles_url():
+        from api.scrapers import scraper_elfinanciero
+        content_tecnologia = scraper_elfinanciero.scraping_elfinanciero_tecnologia_for_index()
+        return content_tecnologia
+
+    def get_extra_content_tecnologiaef():
+        from api.scrapers import scraper_elfinanciero
+        extra_content = scraper_elfinanciero.more_content_tecnologiaf()
+        return extra_content
     # =================================== Methods that actually do the scraping ====================================== #
 
     @app.route('/')
@@ -115,6 +137,17 @@ def create_app():
         content_opinion = get_content_opinionaef_titles_url()
         extra_content = get_extra_content_opinionaef()
         return render_template('homepage/economia_ef.html',content=content_opinion, extra_content = extra_content)
+
+    @app.route('/pymes_ef')
+    def noticias_pymesef():
+        content_pymes = get_content_pymesef_titles_url()
+        extra_content = get_extra_content_pymesef()
+        return render_template('homepage/economia_ef.html',content=content_pymes, extra_content = extra_content)
+    @app.route('/tecnologia_ef')
+    def noticias_tecnologiaef():
+        content_tecnologia = get_content_tecnologiaef_titles_url()
+        extra_content = get_extra_content_tecnologiaef()
+        return render_template('homepage/economia_ef.html',content=content_tecnologia, extra_content = extra_content)
 
     return app
 
