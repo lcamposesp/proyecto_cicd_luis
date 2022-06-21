@@ -33,7 +33,7 @@ def test_economia(client):
     response = client.get('/economia')
     assert_that(response.data).contains(b"Economia")
 
-# test the extra content for the views in the app
+# Test for El Financiero views in the app
 def test_economia_ef(client):
     response = client.get('/economia_ef')
     assert_that(response.data).contains(b"Economia")

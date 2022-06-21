@@ -56,4 +56,8 @@ def test_scraper_return_pymes_ef_for_index():
 def test_scraper_return_tecnologia_ef_for_index():
     returned_data = scraping_elfinanciero_tecnologia_for_index()
     assert returned_data.values() is not empty
+
 # Tests for extra content # 
+def test_scraper_return_nacion_deportes_extra_content():
+    response = more_content_deportes()
+    assert response is not empty

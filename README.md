@@ -12,10 +12,12 @@ El proyecto trabaja bajo un marco donde las noticias no contienen ningun tipo de
 De momento la pagina no muestra resultados de otros medios mas que La Nacion, asi que cualquier ayuda es bien recibida. 
 
 
-Dev Readme
+Para los colaboradores del repositorio
 
 Para correr el proyecto, se necesita de:
  - Python 3.8 al menos
- - Correr dentro de la carpeta root del directorio `pip install -r requirements`
- - Para correr la aplicacion `flask run`
+ - Crear un Python virtualenv. Para mas pasos sobre como crearlo aqui esta la [documentacion]('https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/)
+ - Correr dentro de la carpeta root del directorio correr desde la terminal `pip install -r requirements.txt`
+ - Para ejecutar los test en la aplicacion correr desde la terminal `pytest` y si se quiere con coverage `coverage run -m pytest` y despues `coverage html` para crear la carpeta htmlcov en la cual se encuentra `index.html` que contiene el reporte
+ - Para correr la aplicacion local correr desde la terminal `flask run`
 

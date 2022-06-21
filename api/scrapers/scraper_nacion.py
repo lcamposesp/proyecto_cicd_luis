@@ -308,25 +308,15 @@ def scraping_nacion_economia_for_index():
 
 # Methods that are also being used
 # The methods are in charge of crawling the same sites as the methods above but return a simple list with the extra content missed in the <p> tags. 
-# Only paragraphs are returned and for sure the methods need a little bit of cleaning which is already a story here: https://github.com/lcamposesp/proyecto_cicd_luis/projects/1#card-83141591 
 def more_content_deportes():
 
-    # THIS NEEDS A LITTLE BIT OF CLEANING SINCE NOT ALL LINES ARE USED OR EVEN NEED TO BE CALLED. MOSTLY LINES THAT DO NOT FOCUS ON THE EXTRA CONTENT ADDED
     # This method will return a list with the extra content missed from the pages below
-    dict_titles = {}
-    dict_url = {}
     dict_content = dict()
     r = requests.get('https://www.nacion.com/puro-deporte/')
     soup = BeautifulSoup(r.content, 'html.parser')
     s = soup.find('div', class_='results-list-container')
-    content = s.find_all('a',href=True,title=True)
     added_content = s.find_all('p')
     #Adding items from the content scraping
-    key=1
-    for item in content:
-        dict_titles[key] = item['title']
-        dict_url[key] = item['href']
-        key += 1
     key_more_content = 1
     for item in added_content:
         dict_content[key_more_content] = item.text
@@ -334,25 +324,7 @@ def more_content_deportes():
     print(dict_content)
     # Cleanup of duplicate results
     # This currently works for the titles being returned correctly but not the actual links, which are WIP   
-    temp = []
-    res_titles = dict()
-    for key,val in sorted(dict_titles.items()):
-        if val not in temp:
-            temp.append(val)
-            res_titles[key] = val
-    temp_url = []
-    res_url = dict()
-    for key,val in sorted(dict_url.items()):
-        if val not in temp_url:
-            temp_url.append(val)
-            res_url[key] = val
-    set_titles = list()
-    set_url = list()
     set_more_content = list()
-    for key,val in res_titles.items():
-        set_titles.append(val)
-    for key,val in res_url.items():
-        set_url.append(val)
     for key,val in dict_content.items():
         set_more_content.append(val)
     print(set_more_content)

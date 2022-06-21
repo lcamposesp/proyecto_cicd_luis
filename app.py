@@ -153,6 +153,7 @@ def create_app():
 
 app = create_app()
 if __name__ == '__main__':
+    # CRSF is used in order to protect the page against vulnerabilities #
     crsf = CSRFProtect()
     crsf.init_app(app)
     app.run(debug=False)
