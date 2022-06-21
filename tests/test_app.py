@@ -29,3 +29,23 @@ def test_mundo(client):
 def test_tecnologia(client):
     response = client.get('/tecnologia')
     assert_that(response.data).contains(b"Tecnologia")
+def test_economia(client):
+    response = client.get('/economia')
+    assert_that(response.data).contains(b"Economia")
+
+# test the extra content for the views in the app
+def test_economia_ef(client):
+    response = client.get('/economia_ef')
+    assert_that(response.data).contains(b"Economia")
+
+def test_opinion_ef(client):
+    response = client.get('/opinion_ef')
+    assert_that(response.data).contains(b"Opinion")
+
+def test_pymes_ef(client):
+    response = client.get('/pymes_ef')
+    assert_that(response.data).contains(b"Pymes")
+
+def test_tecnologia_ef(client):
+    response = client.get('/tecnologia_ef')
+    assert_that(response.data).contains(b"Tecnologia")

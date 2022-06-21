@@ -136,18 +136,18 @@ def create_app():
     def noticias_opinionef():
         content_opinion = get_content_opinionaef_titles_url()
         extra_content = get_extra_content_opinionaef()
-        return render_template('homepage/economia_ef.html',content=content_opinion, extra_content = extra_content)
+        return render_template('homepage/opinion_ef.html',content=content_opinion, extra_content = extra_content)
 
     @app.route('/pymes_ef')
     def noticias_pymesef():
         content_pymes = get_content_pymesef_titles_url()
         extra_content = get_extra_content_pymesef()
-        return render_template('homepage/economia_ef.html',content=content_pymes, extra_content = extra_content)
+        return render_template('homepage/pymes_ef.html',content=content_pymes, extra_content = extra_content)
     @app.route('/tecnologia_ef')
     def noticias_tecnologiaef():
         content_tecnologia = get_content_tecnologiaef_titles_url()
         extra_content = get_extra_content_tecnologiaef()
-        return render_template('homepage/economia_ef.html',content=content_tecnologia, extra_content = extra_content)
+        return render_template('homepage/tecnologia_ef.html',content=content_tecnologia, extra_content = extra_content)
 
     return app
 
