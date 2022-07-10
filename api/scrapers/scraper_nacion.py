@@ -333,3 +333,108 @@ def more_content_deportes():
     # print(set_titles)
     # print(set_url)
     return set_more_content
+
+def more_content_el_pais():
+
+    # This method will return a list with the extra content missed from the pages below
+    dict_content = dict()
+    r = requests.get('https://www.nacion.com/el-pais/')
+    soup = BeautifulSoup(r.content, 'html.parser')
+    s = soup.find('div', class_='results-list-container')
+    added_content = s.find_all('p')
+    #Adding items from the content scraping
+    key_more_content = 1
+    for item in added_content:
+        dict_content[key_more_content] = item.text
+        key_more_content+=1
+    print(dict_content)
+    # Cleanup of duplicate results
+    # This currently works for the titles being returned correctly but not the actual links, which are WIP   
+    set_more_content = list()
+    for key,val in dict_content.items():
+        set_more_content.append(val)
+    print(set_more_content)
+    # Uncomment the lines below for debugging more the assigment of titles to urls
+    # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
+    # print(set_titles)
+    # print(set_url)
+    return set_more_content
+
+
+def more_content_el_mundo():
+
+    # This method will return a list with the extra content missed from the pages below
+    dict_content = dict()
+    r = requests.get('https://www.nacion.com/el-mundo/')
+    soup = BeautifulSoup(r.content, 'html.parser')
+    s = soup.find('div', class_='results-list-container')
+    added_content = s.find_all('p')
+    #Adding items from the content scraping
+    key_more_content = 1
+    for item in added_content:
+        dict_content[key_more_content] = item.text
+        key_more_content+=1
+    print(dict_content)
+    # Cleanup of duplicate results
+    # This currently works for the titles being returned correctly but not the actual links, which are WIP   
+    set_more_content = list()
+    for key,val in dict_content.items():
+        set_more_content.append(val)
+    print(set_more_content)
+    # Uncomment the lines below for debugging more the assigment of titles to urls
+    # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
+    # print(set_titles)
+    # print(set_url)
+    return set_more_content
+
+def more_content_tecnologia():
+
+    # This method will return a list with the extra content missed from the pages below
+    dict_content = dict()
+    r = requests.get('https://www.nacion.com/tecnologia/')
+    soup = BeautifulSoup(r.content, 'html.parser')
+    s = soup.find('div', class_='results-list-container')
+    added_content = s.find_all('p')
+    #Adding items from the content scraping
+    key_more_content = 1
+    for item in added_content:
+        dict_content[key_more_content] = item.text
+        key_more_content+=1
+    print(dict_content)
+    # Cleanup of duplicate results
+    # This currently works for the titles being returned correctly but not the actual links, which are WIP   
+    set_more_content = list()
+    for key,val in dict_content.items():
+        set_more_content.append(val)
+    print(set_more_content)
+    # Uncomment the lines below for debugging more the assigment of titles to urls
+    # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
+    # print(set_titles)
+    # print(set_url)
+    return set_more_content    
+
+def more_content_economia():
+
+    # This method will return a list with the extra content missed from the pages below
+    dict_content = dict()
+    r = requests.get('https://www.nacion.com/economia/')
+    soup = BeautifulSoup(r.content, 'html.parser')
+    s = soup.find('div', class_='results-list-container')
+    added_content = s.find_all('p')
+    #Adding items from the content scraping
+    key_more_content = 1
+    for item in added_content:
+        dict_content[key_more_content] = item.text
+        key_more_content+=1
+    print(dict_content)
+    # Cleanup of duplicate results
+    # This currently works for the titles being returned correctly but not the actual links, which are WIP   
+    set_more_content = list()
+    for key,val in dict_content.items():
+        set_more_content.append(val)
+    print(set_more_content)
+    # Uncomment the lines below for debugging more the assigment of titles to urls
+    # Content to render is using a zip method, which combines two lists to a single dictionary creating a key,val association between the values of each 
+    # print(set_titles)
+    # print(set_url)
+    return set_more_content   

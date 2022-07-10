@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Economia RapinoticiasCR</title>
+    <style>
+      .dark-mode {
+       background-color: black;
+       color: white;
+     }
+   </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
@@ -12,8 +18,11 @@
         <div class="row align-items-start">
             <div class="col">
         {% for key,val in content.items() %}
-            <li>{{key}}</li>
-            <a href="https://nacion.com{{val}}">Link a noticia</a>
+        <div class="card-body">
+          <h5 class="card-title">{{key}}</h5>
+          <p class="card-text">{{extra_content[loop.index -1]}}</p>
+          <a href="https://nacion.com{{val}}">Link a noticia</a>
+        </div>
         {% endfor %}
             </div>
       </div>

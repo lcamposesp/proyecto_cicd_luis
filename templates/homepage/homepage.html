@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rapi Noticias</title>
+    <style>
+       .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
   </head>
@@ -11,61 +17,69 @@
     <div class="container h-100 d-flex justify-content-center align-items-center">
       <h1>Rapi Noticias!</h1>
     </div>
-    <div class="container h-100 d-flex justify-content-center align-items-center">
-      <p>Rapinoticias como una pagina para ver las noticias en Costa Rica de una manera resumida (si por resumido entendemos solo el titulo) y le da la opcion a cada usuario de poder ver los links si quisieran verlas en mas detalle</p>
+    <div class="container h-100 d-flex justify-content-center align-items-center d-grid gap-7">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Creemos en la importancia de noticias accesibles para todos
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <strong>En Rapi Noticias es nuestra meta ofrecer informacion que esta ya disponible al publico de una manera rapida, sencilla y sin anuncios.</strong> La informacion que aqui mostramos no ha sido en ningun momento alterada, robada o modificada de cualquier manera. Creemos en que en los tiempos que vivimos la informacion puede ser digerida de distintas maneras y por eso queremos darle a las personas que nos ven informacion rapida con reconocimiento de las publicaciones de las cuales las tomamos y la opcion de poder ver el articulo completo en la pagina de la empresa creadora.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container h-80 d-flex justify-content-center align-items-center">
-      <div class="row align-items-start">
-        <div class="col">
-          <a href="{{url_for('noticias_deportes')}}" id="a-homepage">Noticias Deportes</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_el_pais')}}" id="a-homepage">Noticias El Pais</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_mundo')}}" id="a-homepage">Noticias Mundiales</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_tecnologia')}}" id="a-homepage">Noticias Tecnologia</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_economia')}}" id="a-homepage">Noticias Economia</a>
-        </div>
-      </div>
-      </div>
     <div class="container h-80 d-flex justify-content-center align-items-center">
       <div class="row">
-        <div class="col">
-          <a href="{{url_for('noticias_economiaef')}}" id="a-homepage">Noticias Economia EF</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_opinionef')}}" id="a-homepage">Noticias Opinion EF</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_pymesef')}}" id="a-homepage">Noticias PYMES EF</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_tecnologiaef')}}" id="a-homepage">Noticias Tecnologia EF</a>
-        </div>
-        <div class="col">
-          <a href="{{url_for('noticias_tecnologiaef')}}" id="a-homepage">Noticias Tecnologia 2</a>
-        </div>
+        <ul class="list-group">
+          <a href="{{url_for('noticias_deportes')}}" class="list-group-item list-group-item-action ">Noticias Deportes Nacion</a>
+          <a href="{{url_for('noticias_el_pais')}}" class="list-group-item list-group-item-action ">Noticias Pais Nacion</a>
+          <a href="{{url_for('noticias_economia')}}" class="list-group-item list-group-item-action">Noticias Economia Nacion</a>
+          <a href="{{url_for('noticias_tecnologia')}}" class="list-group-item list-group-item-action">Noticias Tecnologia Nacion</a>
+          <a href="{{url_for('noticias_mundo')}}" class="list-group-item list-group-item-action">Noticias Mundo Nacion</a>
+        </ul>
       </div>
-    </div>
+      <div class="row">
+        <ul class="list-group">
+          <a href="{{url_for('noticias_economiaef')}}" class="list-group-item list-group-item-action">Noticias Economia El Financiero</a>
+          <a href="{{url_for('noticias_opinionef')}}" class="list-group-item list-group-item-action">Noticias Opinion El Financiero</a>
+          <a href="{{url_for('noticias_pymesef')}}" class="list-group-item list-group-item-action">Noticias Pymes El Financiero</a>
+          <a href="{{url_for('noticias_tecnologiaef')}}" class="list-group-item list-group-item-action">Noticias Tecnologia El Financiero</a>
+          <a href="{{url_for('noticias_tecnologiaef')}}" class="list-group-item list-group-item-action">Noticias Tecnologia El Financiero</a>
+        </ul>
+      </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
-
+  <div>
+    <button type="button" class="btn btn-dark" onclick="darkMode()">Darkmode</button>
+  </div>
+  <script>
+    function darkMode() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+    }
+  </script>
   <footer class="text-center text-black fixed-bottom">
-    <p>Rapinoticias es una aplicacion de uso libre la cual no contiene anuncios ni ningun otro tipo de mecanismo para generar ganancias</p>
     <div class="container h-80 d-flex justify-content-center align-items-center">
-      <div class="col">
-        <p><a href="mailto:lcamposesp@ucreativa.com">Donaciones</a></p>
-      </div>
-      <div class="col">
-        <p><a href="https://github.com/lcamposesp/proyecto_cicd_luis">Github</a></p>
-      </div>
-    </div>
-    
+      <div class="accordion accordion-flush" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Disclaimer
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Rapi Noticias es una pagina sin fines de lucro que no tiene planes de monetizacion ni planea tenerlos. Los contenidos son tomados de La Nacion y el Financiero. Con cada articulo un link es proovisto a las publicaciones originales y solo tomamos informacion que esta disponible de manera gratis y publica dentro de sus respectivas paginas web. El proyecto activamente busca usuarios que quieran colaborar para hacerlo mejor para el resto de la comunidad.
+            </div>
+          </div>
+        </div>
+    </div> 
   </footer> 
 </html>
 

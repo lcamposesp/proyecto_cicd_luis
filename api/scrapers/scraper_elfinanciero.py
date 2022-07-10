@@ -373,7 +373,7 @@ def scraping_elfinanciero_tecnologia_for_index():
     content_to_render = dict(zip(set_titles,set_url))
     return content_to_render
 
-def more_content_tecnologiaf():
+def more_content_tecnologiaef():
 
     # THIS NEEDS A LITTLE BIT OF CLEANING SINCE NOT ALL LINES ARE USED OR EVEN NEED TO BE CALLED. MOSTLY LINES THAT DO NOT FOCUS ON THE EXTRA CONTENT ADDED
     # This method will return a list with the extra content missed from the pages below
