@@ -59,6 +59,20 @@ def create_app():
         content_economia = scraper_nacion.scraping_nacion_economia_for_index()
         extra_content = scraper_nacion.more_content_economia()
         return render_template('homepage/economia.html',content=content_economia,extra_content=extra_content)
+    
+    @app.route('/cultura')
+    def noticias_cultura():
+        from api.scrapers import scraper_nacion
+        content = scraper_nacion.scraping_nacion_cultura_for_index()
+        extra_content = scraper_nacion.more_content_cultura()
+        return render_template('homepage/cultura.html',content=content,extra_content=extra_content)
+
+    @app.route('/entretenimiento')
+    def noticias_entretenimiento():
+        from api.scrapers import scraper_nacion
+        content = scraper_nacion.scraping_nacion_entretenimiento_for_index()
+        extra_content = scraper_nacion.more_content_entretenimiento()
+        return render_template('homepage/entretenimiento.html',content=content,extra_content=extra_content)
 
     @app.route('/economia_ef')
     def noticias_economiaef():
@@ -87,6 +101,27 @@ def create_app():
         content_tecnologia = scraper_elfinanciero.scraping_elfinanciero_tecnologia_for_index()
         extra_content = scraper_elfinanciero.more_content_tecnologiaef()
         return render_template('homepage/tecnologia_ef.html',content=content_tecnologia, extra_content = extra_content)
+    
+    @app.route('/gerencia_ef')
+    def noticias_gerenciaef():
+        from api.scrapers import scraper_elfinanciero
+        content = scraper_elfinanciero.scraping_elfinanciero_gerencia_for_index()
+        extra_content = scraper_elfinanciero.more_content_gerenciaef()
+        return render_template('homepage/gerencia.html',content=content, extra_content = extra_content)
+    
+    @app.route('/negocios_ef')
+    def noticias_negociosef():
+        from api.scrapers import scraper_elfinanciero
+        content = scraper_elfinanciero.scraping_elfinanciero_negocios_for_index()
+        extra_content = scraper_elfinanciero.more_content_negociosef()
+        return render_template('homepage/negocios.html',content=content, extra_content = extra_content)
+    
+    @app.route('/finanzas_ef')
+    def noticias_finanzasef():
+        from api.scrapers import scraper_elfinanciero
+        content= scraper_elfinanciero.scraping_elfinanciero_finanzas_for_index()
+        extra_content = scraper_elfinanciero.more_content_finanzasef()
+        return render_template('homepage/finanzas.html',content=content, extra_content = extra_content)
 
     return app
 

@@ -32,6 +32,12 @@ def test_tecnologia(client):
 def test_economia(client):
     response = client.get('/economia')
     assert_that(response.data).contains(b"Economia")
+def test_cultura(client):
+    response = client.get('/cultura')
+    assert_that(response.data).contains(b"Cultura")
+def test_entretenimiento(client):
+    response = client.get('/entretenimiento')
+    assert_that(response.data).contains(b"Entretenimiento")
 
 # Test for El Financiero views in the app
 def test_economia_ef(client):
@@ -49,3 +55,15 @@ def test_pymes_ef(client):
 def test_tecnologia_ef(client):
     response = client.get('/tecnologia_ef')
     assert_that(response.data).contains(b"Tecnologia")
+
+def test_negocios_ef(client):
+    response = client.get('/negocios_ef')
+    assert_that(response.data).contains(b"Negocios")
+
+def test_finanzas_ef(client):
+    response = client.get('/finanzas_ef')
+    assert_that(response.data).contains(b"Finanzas")
+
+def test_gerencia_ef(client):
+    response = client.get('/gerencia_ef')
+    assert_that(response.data).contains(b"Gerencia")
