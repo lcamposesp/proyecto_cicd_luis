@@ -61,3 +61,35 @@ def test_scraper_return_tecnologia_ef_for_index():
 def test_scraper_return_nacion_deportes_extra_content():
     response = more_content_deportes()
     assert response is not empty
+
+def test_scraper_return_nacion_pais_extra_content():
+    response =  more_content_el_pais()
+    assert response is not empty
+
+def test_scraper_return_nacion_tecnologia_extra_content():
+    response =  more_content_tecnologia()
+    assert response is not empty
+
+def test_scraper_return_nacion_economia_extra_content():
+    response =  more_content_economia()
+    assert response is not empty
+
+def test_scraper_return_nacion_mundo_extra_content():
+    response = more_content_el_mundo()
+    assert response is not empty
+
+def test_scraper_return_ef_economia_extra_content():
+    response = more_content_economiaef()
+    assert response is not empty
+
+def test_scraper_return_ef_pymes_extra_content():
+    response = more_content_pymesef()
+    assert response is not empty
+
+def test_scraper_return_ef_tecnologia_extra_content():
+    response = more_content_tecnologiaef()
+    assert response is not empty
+
+def test_scraper_return_ef_opinion_extra_content():
+    response = more_content_opinionef()
+    assert response is not empty
